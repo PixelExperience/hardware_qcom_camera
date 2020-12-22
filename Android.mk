@@ -1,4 +1,5 @@
 # TODO:  Find a better way to separate build configs for ADP vs non-ADP devices
+ifneq ($(PRODUCT_PLATFORM_SOD),true)
 ifneq ($(TARGET_BOARD_AUTO),true)
   ifneq ($(strip $(USE_CAMERA_STUB)),true)
     ifneq ($(BUILD_TINY_ANDROID),true)
@@ -10,3 +11,4 @@ ifneq ($(TARGET_BOARD_AUTO),true)
     endif
   endif
 endif
+endif #PRODUCT_PLATFORM_SOD
